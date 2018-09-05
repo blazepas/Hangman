@@ -12,8 +12,11 @@ public class Prompter {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a sign (character)");
         String guestInput = scanner.nextLine();
-        char guess = guestInput.charAt(0);
+        char guess = guestInput.toLowerCase().charAt(0);
         return game.applyGuess(guess);
     }
 
+    public void displayProgress(){
+        System.out.printf("You already found this letters: %s%n", game.getCurrentProgress());
+    }
 }
